@@ -17,9 +17,12 @@ const Admin = ( )=> {
    
     return (
         <div>
+        <h2><u>Kyalin Sir Jinadabaad</u></h2>
         <h1>Rijman Guitar Shop</h1>
         <h1>Henary guiter shop</h1>
         <h1>Kaylin guitar shop</h1>
+
+      
      
         <Formik
           initialValues={initialValues}
