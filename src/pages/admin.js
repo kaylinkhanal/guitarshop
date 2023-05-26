@@ -14,14 +14,12 @@ const SignupSchema = Yup.object().shape({
     .required('Required'),
 });
 const Admin = ( )=> {
-    const initialValues = {
-        productDiscription: '',
-        productPrice: '',
-        productName: ''
-    }
+   
     return (
         <div>
         <h1>Rijman Guitar Shop</h1>
+        <h1>Henary guiter shop</h1>
+        <h1>Kaylin guitar shop</h1>
      
         <Formik
           initialValues={initialValues}
