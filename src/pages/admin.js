@@ -14,11 +14,7 @@ const SignupSchema = Yup.object().shape({
     .required('Required'),
 });
 const Admin = ( )=> {
-    const initialValues = {
-        productDiscription: '',
-        productPrice: '',
-        productName: ''
-    }
+   
     return (
         <div>
         <h1>Henary guiter shop</h1>
