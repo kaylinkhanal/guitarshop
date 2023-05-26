@@ -21,6 +21,7 @@ const Admin = ( )=> {
     }
     return (
         <div>
+        <h1>Henary guiter shop</h1>
         <h1>Kaylin guitar shop</h1>
      
         <Formik
