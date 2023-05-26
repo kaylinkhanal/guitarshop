@@ -21,7 +21,7 @@ const Admin = ( )=> {
     }
     return (
         <div>
-        <h1>Admin- add products</h1>
+        <h1>Rijman Guitar Shop</h1>
      
         <Formik
           initialValues={initialValues}
