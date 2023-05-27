@@ -27,7 +27,7 @@ const Home = () => {
     <div>
    
       <div >
-        <h1>Product</h1>
+
               <div className="Products">
               { productsList.length> 0 ? productsList.map((item)=>{
                 return <Card item={item}/>
