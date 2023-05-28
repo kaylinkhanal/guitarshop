@@ -25,7 +25,11 @@ const Admin = ( )=> {
       
      
         <Formik
-          initialValues={initialValues}
+          initialValues={{
+            productName: '',
+            productPrice: '',
+            productDiscription: ''
+          }}
           validationSchema={SignupSchema}
           onSubmit={values => {
             const requestOptions = {
