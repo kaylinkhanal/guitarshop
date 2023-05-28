@@ -5,9 +5,13 @@ require('dotenv').config()
 ///parse body
 app.use(express.json())
 app.use(cors())
-
+const connectDb = require('./dbConnect/connection')
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1:27017/guitarshopdb');
+
+
+connectDb()
+
+
 
 //define shape of the document
 const productSchema =  new mongoose.Schema({
