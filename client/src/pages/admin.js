@@ -23,7 +23,6 @@ const Admin = ( )=> {
         <h1>Kaylin guitar shop</h1>
 
       
-     
         <Formik
           initialValues={{
             productName: '',
