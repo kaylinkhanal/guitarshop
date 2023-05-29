@@ -6,21 +6,11 @@ require('dotenv').config()
 app.use(express.json())
 app.use(cors())
 const connectDb = require('./dbConnect/connection')
-const mongoose = require('mongoose');
+const Product = require('./model/product')
 
 
 connectDb()
 
-
-
-//define shape of the document
-const productSchema =  new mongoose.Schema({
-  productName: String, // String is shorthand for {type: String}
-  productPrice: String,
-  productDescription: String,
-  productImage: {type: String, default: 'https://thumbs.dreamstime.com/b/guitar-16517374.jpg' }
-});
-const Product = mongoose.model('Product', productSchema);
 
 
 app.post('/products',async (req,res)=>{
