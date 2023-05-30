@@ -14,18 +14,17 @@ const SignupSchema = Yup.object().shape({
     .required('Required'),
 });
 const Admin = ( )=> {
-    const initialValues = {
-        productDiscription: '',
-        productPrice: '',
-        productName: ''
-    }
+   
     return (
         <div>
-        <h1>Henary guiter shop</h1>
-        <h1>Kaylin guitar shop</h1>
-     
+    
+      
         <Formik
-          initialValues={initialValues}
+          initialValues={{
+            productName: '',
+            productPrice: '',
+            productDiscription: ''
+          }}
           validationSchema={SignupSchema}
           onSubmit={values => {
             const requestOptions = {
