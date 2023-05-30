@@ -6,10 +6,14 @@ app.use(express.json())
 app.use(cors())
 const connectDb = require('./dbConnect/connection')
 const productRoute=require('./routes/product')
+const userRoute=require('./routes/user')
+
 
 
 connectDb()
 app.use("/",productRoute)
+app.use("/",userRoute)
+
 
 
 

@@ -1,4 +1,5 @@
 const Product = require ('../model/product')
+
 const getAllProducts =async (req,res)=>{
     const data = await Product.find()
     res.json({productList:data})

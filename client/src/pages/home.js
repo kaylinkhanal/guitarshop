@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
-
- import Card from '../components/Card';
+import Card from '../components/Card';
 
  
 const Home = () => {

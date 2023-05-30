@@ -23,7 +23,7 @@ const Admin = ( )=> {
           initialValues={{
             productName: '',
             productPrice: '',
-            productDiscription: ''
+            productDescription: ''
           }}
           validationSchema={SignupSchema}
           onSubmit={values => {
@@ -48,8 +48,8 @@ const Admin = ( )=> {
                 <div>{errors.productPrice}</div>
               ) : null}
               <br/>
-              <Field name="productDiscription"  placeholder="productDiscription"/>
-              {errors.productDiscription && touched.productDiscription ? <div>{errors.productDiscription}</div> : null}
+              <Field name="productDescription"  placeholder="productDescription"/>
+              {errors.productDescription && touched.productDescription ? <div>{errors.productDescription}</div> : null}
               <br/>
               
               <button type="submit">Submit</button>
