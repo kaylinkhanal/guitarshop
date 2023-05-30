@@ -9,7 +9,8 @@ const productRoute=require('./routes/product')
 
 
 connectDb()
-app.use("/user",productRoute)
+app.use("/",productRoute)
+
 
 
 
