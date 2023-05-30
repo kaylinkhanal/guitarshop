@@ -17,10 +17,14 @@ const Home = () => {
     fetchProducts()
   }, []);
   const fetchProducts = async() => {
-    const res= await fetch('http://localhost:3001/products')
-    const data = await res.json()
-    setProductsList(data.productList)
-    console.log(data)
+    try{
+      const res= await fetch('http://localhost:3001/products')
+      const data = await res.json()
+      setProductsList(data.productList)
+    } catch(err){
+      alert("sth went wrong while fetching")
+    }
+    
   }
 
   return(
