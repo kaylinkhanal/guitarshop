@@ -4,7 +4,7 @@ const userSchema =  new mongoose.Schema({
   email: {type: String}, 
   password:  {type: String}, 
   phoneNumber: {type: String}, 
-  cartCount: {type: Number, default:0},
+  cartList: [{type: String}],
   favList: [{type: String}]
   });
   const User = mongoose.model('User', userSchema);

@@ -37,5 +37,14 @@ const getAllUser =  async (req,res)=>{
      })
    }
  }
+
+ const getUserDetailsById = async (req,res)=>{
+   const data = await User.findById(req.params.id)
+   if(data){
+     res.json({
+     userList: data
+     })
+   }
+ }
  
-  module.exports = {registerNewUser,loginUser,getAllUser}
+  module.exports = {registerNewUser,loginUser,getAllUser,getUserDetailsById}
