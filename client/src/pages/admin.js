@@ -8,7 +8,7 @@ const SignupSchema = Yup.object().shape({
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-    productDiscription: Yup.string()
+    productDescription: Yup.string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
@@ -18,7 +18,7 @@ const Admin = ( )=> {
     return (
         <div>
     
-      
+    <h3>Add new products</h3>
         <Formik
           initialValues={{
             productName: '',

@@ -1,28 +1,34 @@
 import { Formik, Form, Field } from 'formik';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom';
 
 
-const Register = ( )=> {
-   
+const Login = ()=> {
+  const navigate = useNavigate();
+   const triggerLogin = async(values)=>{
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values)
+  };
+  const res =  await fetch('http://localhost:3001/login', requestOptions)
+  const data = await res.json()
+  if(data.isLoggedIn){
+  localStorage.setItem('id', data.id)
+  navigate('/')
+  }
+
+   }
     return (
         <div>
-    
-      <h3>Create new account</h3>
-        <Formik
+          {localStorage.getItem('id')}
+       <Formik
           initialValues={{
             phoneNumber:'',
             userName: '',
-            password: '',
-            email: ''
+            password: ''
           }}
           onSubmit={values => {
-            const requestOptions = {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(values)
-          };
-          fetch('http://localhost:3001/register', requestOptions)
-      
+            triggerLogin(values)
           }}
         >
           {({ errors, touched }) => (
@@ -42,15 +48,11 @@ const Register = ( )=> {
                 <div>{errors.password}</div>
               ) : null}
               <br/>
-              <Field name="email"  placeholder="email"/>
-              {errors.email && touched.email ? (
-              <div>{errors.email}</div>
-               ): null}
+
+              <button type="submit">Submit</button>
+              <small>Don't have an account yet ?</small><Link to="/register">Sign up</Link>
               <br/>
               
-              <button type="submit">Submit</button>
-              <br/>
-              <small>Already have an account ? </small><Link to="/login"> Sign In</Link>
             </Form>
           )}
         </Formik>
@@ -59,4 +61,4 @@ const Register = ( )=> {
 }
 
 
-export default Register
+export default Login

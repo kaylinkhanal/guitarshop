@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const productSchema =  new mongoose.Schema({
-    productName: String, // String is shorthand for {type: String}
+    productName: String,
     productPrice: String,
     productDescription: String,
-    productImage: {type: String, default: 'https://static-01.daraz.com.np/p/629f0a3e5e8d025edc31be65634bfdca.jpg' }
+    productImage: {type: String, default: 'https://www.dealayo.com/media/catalog/product/cache/1/image/1000x1231/9df78eab33525d08d6e5fb8d27136e95/l/e/lenovo-1005g1-laptop-1-nepal.jpg' }
   });
   const Product = mongoose.model('Product', productSchema);
 

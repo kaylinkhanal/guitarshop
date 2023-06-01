@@ -13,7 +13,12 @@ const Home = () => {
   useEffect(() => {
     //Runs only on the first render
     fetchProducts()
+    fetchUserDetailsById()
   }, []);
+  const fetchUserDetailsById =async()=>{
+    const res= await fetch('http://localhost:3001/users/'+ localStorage.getItem('id'))
+    const data = await res.json()
+  }
   const fetchProducts = async() => {
     try{
       const res= await fetch('http://localhost:3001/products')
@@ -29,7 +34,7 @@ const Home = () => {
     <div>
    
       <div >
-        <h1>Products</h1>
+        <h1>hi {localStorage.getItem('id')}</h1>
               <div className="Products">
               { productsList.length> 0 ? productsList.map((item)=>{
                 return <Card item={item}/>
