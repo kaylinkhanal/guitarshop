@@ -1,12 +1,28 @@
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
-import {Link}  from 'react-router-dom'
+import {Link, useNavigate}  from 'react-router-dom'
 
 const Login = ( )=> {
-   
+  const navigate = useNavigate();
+    const triggerLogin = async(values)=>{
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+    };
+    const res = await fetch('http://localhost:3001/login', requestOptions)
+    const data = await res.json()
+  
+    if(data.isLoggedIn){
+      localStorage.setItem('id', data.id)
+      navigate('/')
+      
+    }
+
+    }
     return (
         <div>
-    
+          { localStorage.getItem('id')}
       
         <Formik
           initialValues={{
@@ -14,12 +30,7 @@ const Login = ( )=> {
             password: '',
           }}
           onSubmit={values => {
-            const requestOptions = {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(values)
-          };
-          fetch('http://localhost:3001/login', requestOptions)
+            triggerLogin(values)
       
           }}
         >

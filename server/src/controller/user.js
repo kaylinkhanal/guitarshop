@@ -15,21 +15,22 @@ const User = require('../model/user')
     if(data) {
       res.json({
         msg: "registration succes"
->>>>>>> ca387dfb35e96e282d4e10ef5f313461ee32a826
       })
     }
   }
 
-<<<<<<< HEAD
-module.exports = newUserDetails
-=======
+
+
+
+
  const loginUser=  async (req,res)=>{
  console.log(req.body)
   const data = await User.findOne({phoneNumber: req.body.phoneNumber})
   if(data){
     res.json({
     isLoggedIn: true,
-    msg:  "success"
+    msg:  "success",
+    id: data._id
     })
   }else{
     res.json({
@@ -39,5 +40,19 @@ module.exports = newUserDetails
   }
 
 }
-  module.exports = {registerNewUser,loginUser}
->>>>>>> ca387dfb35e96e282d4e10ef5f313461ee32a826
+
+  
+
+
+
+const getAllUser =  async (req,res)=>{
+   const data = await User.find()
+   if(data){
+     res.json({
+     userList: data
+     })
+   }
+ }
+ 
+  module.exports = {registerNewUser,loginUser,getAllUser}
+
